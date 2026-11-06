@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#efeee8">
+  <title>Gather — Discover Events</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="page-loader" id="pageLoader" aria-label="Loading">
+    <span class="loader-mark">g.</span><span class="loader-line"></span>
+  </div>
+
+  <header class="site-header" id="top">
+    <a class="brand" href="#home" aria-label="Gather home">gather<span>.</span></a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#home">Home</a>
+      <a class="nav-link" href="#events">Explore events</a>
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#footer">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle icon-button" id="themeToggle" aria-label="Toggle color theme" title="Toggle theme">
+        <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+      </button>
+      <button class="header-register" data-open-register>Register <span>↗</span></button>
+      <button class="menu-toggle icon-button" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="menu-overlay" id="menuOverlay" aria-hidden="true">
+    <div class="menu-overlay-inner">
+      <p class="eyebrow">EXPLORE GATHER</p>
+      <nav class="overlay-links" aria-label="Expanded navigation">
+        <a href="#home"><span>01</span>Home<i>↗</i></a>
+        <a href="#events"><span>02</span>Discover events<i>↗</i></a>
+        <a href="#about"><span>03</span>About us<i>↗</i></a>
+        <a href="#footer"><span>04</span>Contact<i>↗</i></a>
+      </nav>
+      <div class="overlay-bottom"><span>Find your people. Find your moment.</span><span>© 2026 GATHER</span></div>
+    </div>
+  </div>
+
+  <main id="home">
+    <section class="hero section-wrap">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> GOOD THINGS HAPPEN TOGETHER</p>
+        <h1>Make room for<br><em>something</em> memorable.</h1>
+        <p class="hero-description">Discover experiences, meet new people, and find your place at the events that bring us together.</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#events">Explore events <span class="button-arrow">↗</span></a>
+          <a class="text-link" href="#about">How it works <span>↓</span></a>
+        </div>
+        <div class="hero-note"><span class="note-line"></span><span>YOUR NEXT EXPERIENCE STARTS HERE</span></div>
+      </div>
+      <div class="hero-visual reveal">
+        <div class="hero-image-wrap">
+          <img class="hero-image" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1400&q=85" alt="Crowd enjoying a live event">
+          <div class="hero-image-shade"></div>
+          <div class="hero-image-caption"><span>01 / COMMUNITY</span><span>Moments made together</span></div>
+        </div>
+        <div class="floating-stamp"><span>GOOD<br>VIBES<br>ONLY</span><b>✳</b></div>
+        <div class="hero-side-note">MEET · CONNECT · EXPERIENCE</div>
+      </div>
+      <div class="hero-bottom"><span>SCROLL TO DISCOVER</span><span class="scroll-line"></span><span>01 — 04</span></div>
+    </section>
+
+    <section class="intro-strip" id="about">
+      <div class="section-wrap intro-grid">
+        <p class="eyebrow reveal">A PLACE TO BEGIN</p>
+        <div class="intro-content reveal">
+          <h2>Less scrolling.<br><em>More living.</em></h2>
+          <p>From creative gatherings to music, learning, and community experiences — find events that make your calendar feel exciting again.</p>
+        </div>
+        <div class="intro-mark" aria-hidden="true">g.</div>
+      </div>
+    </section>
+
+    <section class="events-section section-wrap" id="events">
+      <div class="section-heading reveal">
+        <div><p class="eyebrow"><span class="eyebrow-dot"></span> FIND YOUR NEXT MOMENT</p><h2>What's happening<span>?</span></h2></div>
+        <p class="section-heading-note">A little inspiration for your<br>next day out.</p>
+      </div>
+
+      <div class="event-tools reveal">
+        <div class="filter-list" id="filterList" aria-label="Filter events">
+          <button class="filter-chip active" data-category="All">All events <span>↗</span></button>
+          <button class="filter-chip" data-category="Music">Music</button>
+          <button class="filter-chip" data-category="Arts">Arts & culture</button>
+          <button class="filter-chip" data-category="Learning">Learning</button>
+          <button class="filter-chip" data-category="Community">Community</button>
+        </div>
+        <label class="search-box">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 4 4"/></svg>
+          <input id="eventSearch" type="search" placeholder="Find an event..." aria-label="Search events">
+          <kbd>/</kbd>
+        </label>
+      </div>
+
+      <div class="featured-event reveal" id="featuredEvent">
+        <div class="featured-photo">
+          <img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1600&q=85" alt="Outdoor music festival stage">
+          <span class="photo-label">EDITOR'S PICK</span>
+        </div>
+        <div class="featured-info">
+          <div class="featured-topline"><span class="eyebrow">FEATURED EXPERIENCE</span><span class="featured-number">01 / 01</span></div>
+          <h3>Beyond the<br><em>ordinary.</em></h3>
+          <p>An open-air gathering filled with music, art, and people who love discovering something new.</p>
+          <div class="event-meta"><span>◷ November 15, 2026</span><span>⌖ Open Grounds</span></div>
+          <button class="button button-dark" data-open-register data-event="Beyond the Ordinary">Save your spot <span class="button-arrow">↗</span></button>
+        </div>
+      </div>
+
+      <div class="events-grid" id="eventsGrid" aria-live="polite">
+        <article class="event-card skeleton-card"><div class="skeleton skeleton-image"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line short"></div></article>
+        <article class="event-card skeleton-card"><div class="skeleton skeleton-image"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line short"></div></article>
+        <article class="event-card skeleton-card"><div class="skeleton skeleton-image"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line short"></div></article>
+      </div>
+      <div class="empty-state" id="emptyState" hidden><span>✳</span><h3>No events found.</h3><p>Try another keyword or category.</p><button class="text-link" id="clearFilters">Clear filters ↗</button></div>
+    </section>
+
+    <section class="closing-band">
+      <div class="section-wrap closing-inner reveal">
+        <p class="eyebrow">YOUR PEOPLE ARE OUT THERE</p>
+        <h2>Make the plan.<br><em>We'll save you a place.</em></h2>
+        <button class="button button-light" data-open-register>Join an event <span class="button-arrow">↗</span></button>
+        <span class="closing-spark">✳</span>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="section-wrap footer-main">
+      <a class="brand footer-brand" href="#home">gather<span>.</span></a>
+      <p>Good things happen<br>when we get together.</p>
+      <div class="footer-links"><a href="#home">Home</a><a href="#events">Events</a><a href="#about">About</a><a href="mailto:hello@example.com">Email us</a></div>
+    </div>
+    <div class="section-wrap footer-bottom"><span>© 2026 GATHER. MADE FOR GOOD MOMENTS.</span><a href="#top">BACK TO TOP ↑</a></div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <dialog class="register-dialog" id="registerDialog">
+    <div class="dialog-top"><span class="eyebrow">SAVE YOUR PLACE</span><button class="dialog-close icon-button" id="dialogClose" aria-label="Close registration">×</button></div>
+    <div class="dialog-content">
+      <p class="eyebrow">YOU'RE INVITED</p>
+      <h2>Count me <em>in.</em></h2>
+      <p class="dialog-intro">Fill in your details to register for an event.</p>
+      <form id="registrationForm" novalidate>
+        <label class="form-field">Full name<input type="text" name="name" placeholder="Your name" required minlength="2"></label>
+        <label class="form-field">Email address<input type="email" name="email" placeholder="you@example.com" required></label>
+        <label class="form-field">Choose an event<select name="event" id="eventSelect" required><option value="">Select an event</option></select></label>
+        <label class="form-field">Number of attendees<select name="attendees"><option>1</option><option>2</option><option>3</option><option>4</option></select></label>
+        <p class="form-message" id="formMessage" aria-live="polite"></p>
+        <button class="button button-dark submit-button" type="submit">Complete registration <span class="button-arrow">↗</span></button>
+      </form>
+      <p class="form-footnote">Demo only: registrations are saved in this browser.</p>
+    </div>
+  </dialog>
+
+</body>
+</html>
